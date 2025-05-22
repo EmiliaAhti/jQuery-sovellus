@@ -24,7 +24,9 @@ Marianna Raitamaa ja Emilia Ahti
 <p>Lisätiedot nappia painamalla avautuu yksittäisen elokuvan lisätiedot erilliseen pop-up ikkunaan</p>
 
 ## Kuva sovelluksesta
+<h3>Leffahaku-sovellus</h3>
 <img src="Kuvat/jquery-leffahaku.jpg" alt="Finnkino-sovellus">
+<h3>Leffahaku-sovellus</h3>
 <img src="Kuvat/pop-up.jpg" alt="Pop-up ikkuna">
 
 ## Käytetyt teknologiat
