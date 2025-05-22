@@ -3,7 +3,7 @@ Marianna Raitamaa ja Emilia Ahti
 
 ## Demo linkki:
 <p>Github: https://github.com/EmiliaAhti/jQuery-sovellus</p>
-<p>Netlify: </p>
+<p>Netlify: https://jqueryleffahaku.netlify.app/</p>
 
 ## Miten työ on toteutettu
 <p>Projekti on toteutettu suurimmaksi osaksi yhteistyöllä sovittuina tapaamisaikoina teamsin välityksellä</p>  
