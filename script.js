@@ -193,7 +193,7 @@ window.showMovieModal = function(title, imageUrl, rating, length, showtime) {
     }
 
     const modalHtml = `
-        <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+        <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
