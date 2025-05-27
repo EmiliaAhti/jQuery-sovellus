@@ -128,6 +128,10 @@ $(document).ready(function() {
                 const rating = $(movie).find("Rating").text() || "Ei ikärajaa";
                 const lengthInMinutes = $(movie).find("LengthInMinutes").text() || "";
                 
+                if (imageUrl && imageUrl.startsWith('http://')) {
+                    imageUrl = imageUrl.replace('http://', 'https://');
+                }
+
                 const $movieCard = $('<div class="movie-card"></div>').css('display', 'none');
                 
                 $movieCard.html(`
@@ -183,20 +187,24 @@ $(document).ready(function() {
 });
 
 // Bootstrap elokuvan tiedoille
-function showMovieModal(title, imageUrl, rating, length, showtime) {
+window.showMovieModal = function(title, imageUrl, rating, length, showtime) {
+    if (imageUrl && imageUrl.startsWith('http://')) {
+    imageUrl = imageUrl.replace('http://', 'https://');
+    }
+
     const modalHtml = `
-        <div class="modal fade" id="movieModal" tabindex="-1">
+        <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">${title}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <h5 class="modal-title" id="movieModalLabel">${title}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sulje"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="${imageUrl}" alt="${title}" class="img-fluid mb-3" onerror="this.style.display='none'">
-                        <p><strong>Ikäraja:</strong> ${rating}</p>
-                        ${length ? `<p><strong>Kesto:</strong> ${length} min</p>` : ''}
-                        <p><strong>Seuraava näytös:</strong> ${showtime}</p>
+                        ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="img-fluid mb-3" onerror="this.style.display='none'">` : ''}
+                                    <p><strong>Ikäraja:</strong> ${rating}</p>
+                                    ${length ? `<p><strong>Kesto:</strong> ${length} min</p>` : ''}
+                                    <p><strong>Seuraava näytös:</strong> ${showtime}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sulje</button>
