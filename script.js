@@ -123,7 +123,7 @@ $(document).ready(function() {
             let delay = 0;
             karsitutElokuvat.forEach(function(movie) {
                 const title = $(movie).find("Title").text();
-                const imageUrl = $(movie).find("EventLargeImagePortrait").text() || "";
+                let imageUrl = $(movie).find("EventLargeImagePortrait").text() || "";
                 const showtime = $(movie).find("dttmShowStart").text();
                 const rating = $(movie).find("Rating").text() || "Ei ikärajaa";
                 const lengthInMinutes = $(movie).find("LengthInMinutes").text() || "";
